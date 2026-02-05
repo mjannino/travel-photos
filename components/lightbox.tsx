@@ -62,6 +62,7 @@ export function Lightbox({ photo, imageBaseUrl, onClose, onPrev, onNext }: Light
             <ChevronRight className="h-6 w-6" />
           </button>
           <Image
+            key={photo.src}
             src={`${imageBaseUrl}/${photo.src}`}
             alt={photo.alt || photo.src}
             width={photo.width}
