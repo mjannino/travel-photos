@@ -28,6 +28,15 @@ export function Lightbox({ photo, imageBaseUrl, onClose, onPrev, onNext }: Light
         <DialogPrimitive.Content
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
           aria-label={photo.alt || photo.src}
+          onKeyDown={(e) => {
+            if (e.key === 'ArrowLeft') {
+              e.preventDefault()
+              onPrev()
+            } else if (e.key === 'ArrowRight') {
+              e.preventDefault()
+              onNext()
+            }
+          }}
         >
           <DialogPrimitive.Title className="sr-only">
             {photo.alt || photo.src}
