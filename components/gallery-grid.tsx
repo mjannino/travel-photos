@@ -14,6 +14,14 @@ export function GalleryGrid({ photos, imageBaseUrl }: GalleryGridProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const selectedPhoto = selectedIndex !== null ? photos[selectedIndex] : null
 
+  const handlePrev = () => {
+    setSelectedIndex((i) => (i !== null ? (i - 1 + photos.length) % photos.length : null))
+  }
+
+  const handleNext = () => {
+    setSelectedIndex((i) => (i !== null ? (i + 1) % photos.length : null))
+  }
+
   return (
     <>
       <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
@@ -42,6 +50,8 @@ export function GalleryGrid({ photos, imageBaseUrl }: GalleryGridProps) {
         photo={selectedPhoto}
         imageBaseUrl={imageBaseUrl}
         onClose={() => setSelectedIndex(null)}
+        onPrev={handlePrev}
+        onNext={handleNext}
       />
     </>
   )
