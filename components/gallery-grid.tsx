@@ -26,7 +26,7 @@ export function GalleryGrid({ photos, imageBaseUrl }: GalleryGridProps) {
     <>
       <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
         {photos.map((photo, index) => (
-          <div key={photo.src} className="mb-4 break-inside-avoid">
+          <div key={photo.src} className="mb-4 break-inside-avoid group relative overflow-hidden rounded-sm">
             <button
               type="button"
               className="w-full cursor-zoom-in"
@@ -40,8 +40,9 @@ export function GalleryGrid({ photos, imageBaseUrl }: GalleryGridProps) {
                 placeholder={photo.blurDataURL ? 'blur' : 'empty'}
                 blurDataURL={photo.blurDataURL}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                className="w-full rounded-sm"
+                className="w-full transition-transform duration-200 group-hover:scale-[1.03]"
               />
+              <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-200 group-hover:bg-black/10" />
             </button>
           </div>
         ))}

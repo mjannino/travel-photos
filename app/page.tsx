@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Camera, MapPin, Heart } from 'lucide-react'
+import { Camera } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -10,12 +10,8 @@ export default function Home() {
           <Camera className="h-8 w-8 text-muted-foreground" />
         </div>
         <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Travel Photos
+          Japan 2024
         </h1>
-        <p className="mb-8 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-          Capturing moments from around the world. A photography portfolio
-          showcasing beautiful destinations and unforgettable adventures.
-        </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/gallery"
@@ -32,36 +28,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="border-t border-border bg-muted/50 px-4 py-16">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="mb-12 text-center text-2xl font-semibold">
-            Explore the Collection
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-3">
-            <FeatureCard
-              icon={<Camera className="h-6 w-6" />}
-              title="High Quality"
-              description="Every photo captured with attention to detail and professional equipment."
-            />
-            <FeatureCard
-              icon={<MapPin className="h-6 w-6" />}
-              title="Global Destinations"
-              description="From local hidden gems to iconic landmarks across continents."
-            />
-            <FeatureCard
-              icon={<Heart className="h-6 w-6" />}
-              title="Authentic Moments"
-              description="Real stories and genuine experiences from every journey."
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="border-t border-border px-4 py-8">
         <div className="mx-auto max-w-4xl text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Travel Photos. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Dream Drop. All rights reserved.</p>
         </div>
       </footer>
     </main>

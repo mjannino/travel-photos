@@ -41,14 +41,14 @@ export function Lightbox({ photo, imageBaseUrl, onClose, onPrev, onNext }: Light
           <DialogPrimitive.Title className="sr-only">
             {photo.alt || photo.src}
           </DialogPrimitive.Title>
-          <DialogPrimitive.Close className="absolute right-4 top-4 z-10 rounded-full bg-black/50 p-2 text-white transition-colors hover:bg-black/70">
+          <DialogPrimitive.Close className="absolute right-4 top-4 z-10 rounded-full bg-black/50 p-2 text-white transition-all duration-200 hover:scale-110 hover:bg-black/70">
             <X className="h-6 w-6" />
             <span className="sr-only">Close</span>
           </DialogPrimitive.Close>
           <button
             type="button"
             onClick={onPrev}
-            className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white transition-colors hover:bg-black/70"
+            className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white transition-all duration-200 hover:scale-110 hover:bg-black/70"
             aria-label="Previous photo"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -56,7 +56,7 @@ export function Lightbox({ photo, imageBaseUrl, onClose, onPrev, onNext }: Light
           <button
             type="button"
             onClick={onNext}
-            className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white transition-colors hover:bg-black/70"
+            className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white transition-all duration-200 hover:scale-110 hover:bg-black/70"
             aria-label="Next photo"
           >
             <ChevronRight className="h-6 w-6" />
